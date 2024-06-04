@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>操作界面</title>
+    <link href="./main.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <!-- 上面的卡片 -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <!--                <input type="text" class="form-control" placeholder="请输入搜索关键字" aria-label="Search keyword" minlength="2">-->
+                <input aria-label="Start page" class="form-control" placeholder="从第几页开始" type="number">
+            </div>
+            <button class="btn btn-primary mr-2" id="execute-btn" onclick="toggleExecute()">开始执行</button>
+            <button class="btn btn-secondary" id="login-success-btn" onclick="loginSuccess()">登录账号成功</button>
+            <button class="btn btn-secondary" id="start-success-btn" onclick="startSuccess()">开始爬取</button>
+        </div>
+    </div>
+
+    <!-- 下面的卡片 -->
+    <div class="card">
+        <div class="card-body">
+            <!-- 输入框和按钮 -->
+            <div class="input-group mb-3">
+                <input aria-label="Sender's email" class="form-control" placeholder="发件人邮箱" type="email">
+                <input aria-label="Email authorization code" class="form-control" placeholder="邮箱授权码"
+                       type="password">
+                <input aria-label="Email subject" class="form-control" placeholder="邮件主题" type="text">
+            </div>
+            <!-- 富文本编辑器 -->
+            <div id="editor-wrapper">
+                <div id="toolbar-container">
+                    <div></div> <!-- 工具栏的占位符 -->
+                </div>
+                <div id="editor-container"></div>
+            </div>
+            <button class="btn btn-primary" id="send" onclick="send_email()">开始发送</button>
+            <button class="btn btn-success" id="add_file" onclick="set_file()">添加附件</button>
+            <div id="lab" style="margin-top: 10px;">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
